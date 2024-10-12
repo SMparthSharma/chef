@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 class RecipeModel{
   late String foodLabel;
   late String image;

@@ -3,12 +3,13 @@ import 'package:flutter/services.dart';
 import 'package:mr_chef/activity/constant.dart';
 import 'package:mr_chef/activity/home_screen.dart';
 
-import 'activity/searchPage.dart';
+
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
     statusBarColor: Colors.transparent
   ));
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
 }
 

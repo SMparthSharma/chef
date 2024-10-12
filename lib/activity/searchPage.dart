@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:mr_chef/activity/recipe_screen.dart';
 import 'package:flutter/material.dart';
 import 'constant.dart';
@@ -8,7 +7,7 @@ import 'package:http/http.dart';
 
 class SearchPage extends StatefulWidget {
   String query;
-  SearchPage(this.query);
+  SearchPage(this.query, {super.key});
 
 
   @override
@@ -56,7 +55,7 @@ class _SearchPageState extends State<SearchPage> {
       backgroundColor: kLightColor,
       body: Column(
         children: [
-          SizedBox(height: 30.0,),
+          const SizedBox(height: 30.0,),
       Container(
       margin: const EdgeInsets.symmetric(
           vertical: 10.0, horizontal: 10.0),
@@ -90,7 +89,7 @@ class _SearchPageState extends State<SearchPage> {
                 color: Colors.grey, fontSize: 20.0)),
       ),
     ),
-          Padding(padding: EdgeInsets.only(right: 90),
+          Padding(padding: const EdgeInsets.only(right: 90),
             child: Container(height: 30.0,width: 250,
               alignment: Alignment.topLeft,
               child: const Text(
@@ -113,7 +112,7 @@ class _SearchPageState extends State<SearchPage> {
               height:MediaQuery.of(context).size.height ,
               width: MediaQuery.of(context).size.width,
 
-              child: isLoading ? Container(height: 50,child: Center(child: CircularProgressIndicator() ,),): ListView.builder(
+              child: isLoading ? const SizedBox(height: 50,child: Center(child: CircularProgressIndicator() ,),): ListView.builder(
                 shrinkWrap: true,
                 scrollDirection: Axis.vertical,
                 itemCount: recipeList.length,
@@ -159,7 +158,7 @@ class _SearchPageState extends State<SearchPage> {
 
                                 child: Row(mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                    Icon(Icons.local_fire_department,color: Colors.red,),
+                                    const Icon(Icons.local_fire_department,color: Colors.red,),
                                     Text(recipeList[index].calories.toStringAsFixed(0),
                                         overflow: TextOverflow.ellipsis,
                                         style: const TextStyle(
