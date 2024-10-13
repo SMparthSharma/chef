@@ -14,7 +14,7 @@ class _RecipeScreenState extends State<RecipeScreen> {
   late String finalUrl;
   @override
   void initState() {
-    // TODO: implement initState
+
     if(widget.url.toString().contains("http://")){
       finalUrl=widget.url.toString().replaceAll("http://", "https://");
     }
