@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:mr_chef/activity/recipe_screen.dart';
 import 'package:flutter/material.dart';
 import 'constant.dart';
@@ -22,7 +23,7 @@ class _SearchPageState extends State<SearchPage> {
   List<RecipeModel> recipeList= <RecipeModel>[];
 
   getRecipe(String query) async {
-    String url ="https://api.edamam.com/api/recipes/v2?type=public&q=$query&app_id=bacff06d&app_key=21d7a5e6d035e180d6276ca7544554e9%09";
+    String url ="https://api.edamam.com/api/recipes/v2?type=public&q=$query&app_id=${dotenv.env['App_id']}&app_key=${dotenv.env['App_key']}%09";
     Response response = await get(Uri.parse(url));
     Map data = jsonDecode(response.body);
     // log(data["hits"].toString());
