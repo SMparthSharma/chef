@@ -2,13 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:mr_chef/activity/constant.dart';
 import 'package:mr_chef/activity/home_screen.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 
 
-void main() {
+void main() async {
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
     statusBarColor: Colors.transparent
   ));
+  await dotenv.load(fileName: '.env');
   WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
 }
