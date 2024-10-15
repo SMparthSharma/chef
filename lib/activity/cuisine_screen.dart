@@ -1,12 +1,13 @@
 import 'package:mr_chef/activity/constant.dart';
+import 'package:mr_chef/activity/random_recipe.dart';
 import 'package:mr_chef/activity/searchPage.dart';
 import 'package:flutter/material.dart';
-import 'model.dart';
 class Cuisine extends StatelessWidget {
   const Cuisine({super.key});
 
   @override
   Widget build(BuildContext context) {
+
 
     return Scaffold(
         backgroundColor: kLightColor,

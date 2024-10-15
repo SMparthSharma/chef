@@ -73,7 +73,7 @@ class _RecipeScreenState extends State<RecipeScreen> {
 
               ),
             ),
-            _progress<1?const Center(child: CircularProgressIndicator(color: Colors.white,)):const SizedBox()
+            _progress<1?const LinearProgressIndicator(color: Colors.blue,):const SizedBox()
           ],
         ),
       ),

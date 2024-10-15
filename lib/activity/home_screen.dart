@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:mr_chef/activity/random_recipe.dart';
 import 'package:mr_chef/activity/searchPage.dart';
 import 'package:flutter/material.dart';
 import 'package:mr_chef/activity/constant.dart';
@@ -22,6 +23,8 @@ class _HomeState extends State<Home> {
 
   TextEditingController searchController = TextEditingController();
   List<RecipeModel> recipeList = <RecipeModel>[];
+   List pic=random(4);
+   List randomLabel=random(1);
 
 
   getRecipe(String query) async {
@@ -46,7 +49,7 @@ class _HomeState extends State<Home> {
   @override
   void initState() {
     super.initState();
-    getRecipe("healthy");
+    getRecipe(randomLabel[0]["headline"].toString());
   }
 
   @override
@@ -165,7 +168,7 @@ class _HomeState extends State<Home> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => SearchPage('healthy')));
+                                builder: (context) => SearchPage(randomLabel[0]["headline"].toString())));
                       },
                       child: const Text(
                         "See All",
@@ -355,7 +358,7 @@ class _HomeState extends State<Home> {
                                   child: ClipRRect(
                                 borderRadius: BorderRadius.circular(20.0),
                                 child: Image.network(
-                                  picPicker[index]["impUrl"],
+                                  pic[index]["impUrl"],
                                   //'assets/images/mm.png',
                                   height: 120.0,
                                   width: double.infinity,
@@ -387,7 +390,7 @@ class _HomeState extends State<Home> {
                                     color: Colors.white54,
                                     borderRadius: BorderRadius.circular(10.0)),
                                 child: Text(
-                                  picPicker[index]["headline"],
+                                  pic[index]["headline"],
                                   style: const TextStyle(
                                       fontFamily: 'Hellix-Bold',
                                       fontWeight: FontWeight.bold,
