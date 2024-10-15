@@ -344,7 +344,7 @@ class _HomeState extends State<Home> {
                           context,
                           MaterialPageRoute(
                               builder: (context) =>
-                                  SearchPage(picPicker[index]["headline"]))),
+                                  SearchPage(pic[index]["headline"]))),
                       child: Container(
                           margin: const EdgeInsets.only(bottom: 12.0),
                           decoration: BoxDecoration(
